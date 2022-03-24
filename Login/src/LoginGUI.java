@@ -20,10 +20,14 @@ public class LoginGUI {
 		LOGPASS.put("default", "12345");
 		LOGPASS.put("Admin","Admin1");
 		
+		final int FRAMEWIDTH = 360;
+		final int FRAMEHEIGHT = 230;
+		final int FRAMEX= 370;
+		final int FRAMEY = 230;
 		
 		// Login frame parameters 
 		JFrame frame = new JFrame("Login form");
-		frame.setBounds(200, 200, 370, 230);
+		frame.setBounds(FRAMEWIDTH, FRAMEHEIGHT, FRAMEX, FRAMEY);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		
@@ -73,14 +77,20 @@ public class LoginGUI {
 		*  they start to be visible after after clicking the loginButton
 		*/
 		JLabel succesLabel = new JLabel("Sucessfully logged in!");
-		succesLabel.setBounds(100, 150, 200, 25);
+		succesLabel.setBounds(100, 140, 200, 25);
 		panel.add(succesLabel);
 		succesLabel.setVisible(false);
 		
 		JLabel unsuccesLabel = new JLabel("Login unsuccesful");
-		unsuccesLabel.setBounds(100, 150, 200, 25);
+		unsuccesLabel.setBounds(100, 140, 200, 25);
 		panel.add(unsuccesLabel);
 		unsuccesLabel.setVisible(false);
+		
+		JButton rightValuesButton = new JButton ("Psss click me");
+		rightValuesButton.setBounds(10, 170, 130, 20);
+		panel.add(rightValuesButton);
+		rightValuesButton.setVisible(true);
+		
 		
 		
 		/*
