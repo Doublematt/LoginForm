@@ -2,17 +2,29 @@ import javax.swing.JFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+
 import javax.swing.*;
 
 public class LoginGUI {
 
 	public static void main(String[] args) {
 		
+		/*
+		 * HashMap of right Logins and passwords
+		 * key - Login
+		 * value - password
+		 */
+		HashMap<String, String> LOGPASS =  new  HashMap<String, String>();
+		LOGPASS.put("User1","MyPass");
+		LOGPASS.put("default", "12345");
+		LOGPASS.put("Admin","Admin1");
+		
+		
 		// Login frame parameters 
 		JFrame frame = new JFrame("Login form");
 		frame.setBounds(200, 200, 370, 230);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		
 		
 		
@@ -87,13 +99,13 @@ public class LoginGUI {
 				
 				/*
 				 * first if checks if Strings are empty and if they are there is no point in going further
-				 * second if checks if they are right using equals method from String lib
+				 * second if checks if they are right using HashMap method contains
 				 * it sets the right label visibility to true
 				 * Strings are being cleared at the and to make sure not to use them afterwards
 				 */
 				
 				if(!userLogin.isEmpty() && !userPassword.isEmpty()) {
-					if(userLogin.equals("Mateusz123") && userPassword.equals("Matusewicz")) {
+					if(LOGPASS.containsKey(userLogin) && LOGPASS.containsValue(userPassword)) {
 						
 						// additional console print to check if everything is working 
 						System.out.println("You have sucessfully logged in");
