@@ -20,14 +20,10 @@ public class LoginGUI {
 		LOGPASS.put("default", "12345");
 		LOGPASS.put("Admin","Admin1");
 		
-		final int FRAMEWIDTH = 360;
-		final int FRAMEHEIGHT = 230;
-		final int FRAMEX= 370;
-		final int FRAMEY = 230;
 		
 		// Login frame parameters 
 		JFrame frame = new JFrame("Login form");
-		frame.setBounds(FRAMEWIDTH, FRAMEHEIGHT, FRAMEX, FRAMEY);
+		frame.setBounds(PopUpWindow.FRAMEWIDTH, PopUpWindow.FRAMEHEIGHT, PopUpWindow.FRAMEX, PopUpWindow.FRAMEY);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		
@@ -86,6 +82,13 @@ public class LoginGUI {
 		panel.add(unsuccesLabel);
 		unsuccesLabel.setVisible(false);
 		
+		
+		
+		/*
+		 * button created to show right logins and passwords
+		 * after clicking create new Object PopUpWindow (JFrame) 
+		 * window should contain all the right logins and passwords 
+		 */
 		JButton rightValuesButton = new JButton ("Psss click me");
 		rightValuesButton.setBounds(10, 170, 130, 20);
 		panel.add(rightValuesButton);
@@ -149,7 +152,20 @@ public class LoginGUI {
 					
 		});
 		
-
+		/*
+		 * used to find right values of login and password to sign in
+		 * creates a new object of PopUpWindow class
+		 * 
+		 */
+		rightValuesButton.addActionListener(new ActionListener() {
+				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			
+				PopUpWindow popUp = new PopUpWindow("Logins and passwords");
+			}
+				
+		});
 		
 		
 		frame.setVisible(true);
