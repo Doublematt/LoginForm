@@ -8,16 +8,21 @@ public class LoginGUI {
 
 	public static void main(String[] args) {
 		
-		JFrame frame = new JFrame("Login");
-		
+		// Login frame parameters 
+		JFrame frame = new JFrame("Login form");
 		frame.setBounds(200, 200, 370, 230);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		
+		
+		
+		// creating panel for all elements
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
-		
 		frame.getContentPane().add(panel);
+		
+		
+		// login form
 		
 		JLabel loginLabel = new JLabel("Loign:");
 		panel.add(loginLabel);
@@ -27,6 +32,10 @@ public class LoginGUI {
 		loginField.setBounds(120, 30, 100, 20);
 		panel.add(loginField);
 		
+		
+		
+		// password form
+		
 		JLabel passwordLabel = new JLabel("Password: ");
 		panel.add(passwordLabel);
 		passwordLabel.setBounds(50, 60, 70, 20);
@@ -35,10 +44,22 @@ public class LoginGUI {
 		passwordField.setBounds(120, 60, 100, 20);
 		panel.add(passwordField);
 		
+		
+		
+		
+		// button used to log in
+		// should change the visibility of one of two labels succesLabel or unsuccesLabel
 		JButton loginButton = new JButton("Log in ");
 		loginButton.setBounds(130, 100, 80, 25);
 		panel.add(loginButton);
 		
+		
+		
+		/*
+		* two labels used if you fail to log in or you success	
+		*  they should't be visible at the beginning
+		*  they start to be visible after after clicking the loginButton
+		*/
 		JLabel succesLabel = new JLabel("Sucessfully logged in!");
 		succesLabel.setBounds(100, 150, 200, 25);
 		panel.add(succesLabel);
@@ -50,18 +71,31 @@ public class LoginGUI {
 		unsuccesLabel.setVisible(false);
 		
 		
-		
+		/*
+		 * action listener used to login
+		 * checks login and password and change visibility of right label
+		 */
 		loginButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				// getting text out of textFields and assigning it to Strings to check if they are right
 				String userLogin = loginField.getText();
+				// getText still works but it probably should be used here
 				String userPassword = passwordField.getText();
+				
+				/*
+				 * first if checks if Strings are empty and if they are there is no point in going further
+				 * second if checks if they are right using equals method from String lib
+				 * it sets the right label visibility to true
+				 * Strings are being cleared at the and to make sure not to use them afterwards
+				 */
 				
 				if(!userLogin.isEmpty() && !userPassword.isEmpty()) {
 					if(userLogin.equals("Mateusz123") && userPassword.equals("Matusewicz")) {
 						
+						// additional console print to check if everything is working 
 						System.out.println("You have sucessfully logged in");
 						succesLabel.setVisible(true);
 						
@@ -77,9 +111,11 @@ public class LoginGUI {
 						if(succesLabel.isVisible())
 							succesLabel.setVisible(false);
 						
+						// clearing strings after checking conditions
 						loginField.setText("");
 						passwordField.setText("");
 						
+						// changing focus to let user input other login and password
 						loginField.requestFocus();
 						
 						
