@@ -112,13 +112,13 @@ public class LoginGUI {
 				
 				/*
 				 * first if checks if Strings are empty and if they are there is no point in going further
-				 * second if checks if they are right using HashMap method contains
+				 * then it checks if they are correct using HashMap method contains and get method
 				 * it sets the right label visibility to true
 				 * Strings are being cleared at the and to make sure not to use them afterwards
 				 */
 				
 				if(!userLogin.isEmpty() && !userPassword.isEmpty()) {
-					if(LOGPASS.containsKey(userLogin) && LOGPASS.containsValue(userPassword)) {
+					if(LOGPASS.containsKey(userLogin) && (LOGPASS.get(userLogin)).equals(userPassword)) {
 						
 						// additional console print to check if everything is working 
 						System.out.println("You have sucessfully logged in");
