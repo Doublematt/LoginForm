@@ -13,12 +13,7 @@ import javax.swing.*;
 public class PopUpWindow {
 	
 	
-	// values for frames in my GUI
-	public final static int FRAMEWIDTH = 360;
-	public final static int FRAMEHEIGHT = 230;
-	public final static int FRAMEX= 370;
-	public final static int FRAMEY = 230;
-	
+
 	/*
 	 * String of values from hashMap from LoginGUI.java
 	 * used to display them in frame to show the user right values of login and password
@@ -90,6 +85,12 @@ public class PopUpWindow {
 	private final int LABELY = 20;
 	private final int USERLABELX = 15;
 	private final int PASSLABELX = 185;
+	
+	// values for frames in my GUI
+	public final static int FRAMEWIDTH = 360;
+	public final static int FRAMEHEIGHT = 230;
+	public final static int FRAMEX= 370;
+	public final static int FRAMEY = 230;
 	
 }
 
