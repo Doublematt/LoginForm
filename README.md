@@ -11,7 +11,7 @@ Simle login form in java using swing library.
 
 ## General info
 
-Project in progress.
+Project is done.
 GUI program using swing. 
 To log in choose the combination of login and password (click me button)
 Only the right combination of password and login works ( one can check)
@@ -23,7 +23,7 @@ login and password are hashmap keys and values.
 
 ## Setup
 
-Clone the repository and run it in any java IDE (for example IntelliJ).
+Clone the repository and run it in Eclipse.
 
 ## Goal of project
 
@@ -32,6 +32,5 @@ Login forms are everwhere in the internet so It is important to know how to crea
 
 ## Aditional info
 
-I am planning to rebuild the GUI to make it looks more fancy (for now its just basic)
-Also I am planning to add some register posibility and some after succesful login frame.
+It only works in Eclipse. IF you try to open It in Intelij, Project will not run, but you can still see the code.
 
